@@ -6,10 +6,22 @@ def decode_char(val)
     'Q' => '--.-', 'R' => '.-.', 'S' => '...', 'T' => '-', 'U' => '..-', 'V' => '...-',
     'W' => '.--', 'X' => '-..-', 'Y' => '-.--', 'Z' => '--..'
   }
-  puts signs.key(val)
+  print signs.key(val)
 end
-decode_char('-..-')
+# decode_char('-..-')
 
-# def decode_word(val)
-#   val.split(" ").each
+def decode_word(val)
+  val.split(" ").each{|i| decode_char(i)}
+end
+
+# decode_word("-- -.--")
+
+def decode(val)
+  val.split(/   /).each{|i| decode_word(i)
+print " "}
+print "\n"
+end
+
+decode("-- -.--   -. .- -- .")
+decode(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
 
