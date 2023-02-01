@@ -8,13 +8,10 @@ def decode_char(val)
   }
   print signs.key(val)
 end
-# decode_char('-..-')
 
 def decode_word(val)
   val.split(" ").each{|i| decode_char(i)}
 end
-
-# decode_word("-- -.--")
 
 def decode(val)
   val.split(/   /).each{|i| decode_word(i)
