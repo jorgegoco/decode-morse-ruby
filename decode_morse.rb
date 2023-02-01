@@ -10,15 +10,16 @@ def decode_char(val)
 end
 
 def decode_word(val)
-  val.split(" ").each{|i| decode_char(i)}
+  val.split.each { |i| decode_char(i) }
 end
 
 def decode(val)
-  val.split(/   /).each{|i| decode_word(i)
-print " "}
-print "\n"
+  val.split(/   /).each do |i|
+    decode_word(i)
+    print ' '
+  end
+  print "\n"
 end
 
-decode("-- -.--   -. .- -- .")
-decode(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
-
+decode('-- -.--   -. .- -- .')
+decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
